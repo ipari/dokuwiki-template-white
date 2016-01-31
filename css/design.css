@@ -3,6 +3,71 @@
  * bits that surround the content.
  */
 
+/* dokuwiki__header */
+#dokuwiki__header button {
+    width: 30px;
+    height: 30px;
+    border: 0 none;
+    outline: none;
+    background-color: transparent;
+}
+
+#left_button {
+    background-image: url('images/menu-8x.png');
+}
+
+#right_button {
+    background-image: url('images/pencil-8x.png');
+}
+
+button.hide_text {
+    text-indent: -9999px;
+    background-size: cover;
+}
+
+
+/* ipari__sidebar */
+.sidebar .submenu a {
+    display: block;
+    padding: 6px 10px 6px 30px;
+    background-color: #eee;
+    background-position: 10px center;
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+}
+
+a.action.edit {
+    background-image: url('images/pencil-8x.png');
+}
+
+a.action.revs {
+    background-image: url('images/action-undo-8x.png');
+}
+
+a.action.backlink {
+    background-image: url('images/link-intact-8x.png');
+}
+
+a.action.top {
+    background-image: url('images/chevron-top-8x.png');
+}
+
+a.action.recent {
+    background-image: url('images/calendar-8x.png');
+}
+
+a.action.media {
+    background-image: url('images/image-8x.png');
+}
+
+a.action.index {
+    background-image: url('images/compass-8x.png');
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
 /* highlight selected tool */
 .mode_admin a.action.admin,
 .mode_login a.action.login,
