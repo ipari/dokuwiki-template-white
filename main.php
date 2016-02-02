@@ -29,10 +29,10 @@ $showSidebar = page_findnearest($conf['sidebar']);
         <?php html_msgarea() ?>
         <?php tpl_includeFile('header.html') ?>
 
-        <div id="ipari__left" class="sidebar">
+        <div id="sidebar_left" class="sidebar">
             <!-- ********** ASIDE ********** -->
             <?php if ($showSidebar): ?>
-            <div id="dokuwiki__aside">
+            <div id="dokuwiki__aside" class="sidebar">
                 <?php tpl_includeFile('sidebarheader.html') ?>
                 <?php tpl_include_page($conf['sidebar'], 1, 1) ?>
                 <?php tpl_includeFile('sidebarfooter.html') ?>
@@ -71,18 +71,18 @@ $showSidebar = page_findnearest($conf['sidebar']);
             <?php endif ?>
         </div>
 
-        <div id="ipari__right" class="sidebar">
+        <div id="sidebar_right" class="sidebar">
             <!-- PAGE TOOLS -->
             <div id="dokuwiki__pagetools" class="submenu">
                 <h3><?php echo $lang['page_tools'] ?></h3>
                 <ul>
                     <?php tpl_toolsevent('pagetools', array(
-                        'edit'      => tpl_action('edit', 1, 'li', 1),
-                        'revisions' => tpl_action('revisions', 1, 'li', 1),
-                        'backlink'  => tpl_action('backlink', 1, 'li', 1),
-                        'subscribe' => tpl_action('subscribe', 1, 'li', 1),
-                        'revert'    => tpl_action('revert', 1, 'li', 1),
-                        'top'       => tpl_action('top', 1, 'li', 1),
+                        'edit'      => tpl_action('edit', 1, 'li', 1, '<i></i>'),
+                        'revisions' => tpl_action('revisions', 1, 'li', 1, '<i></i>'),
+                        'backlink'  => tpl_action('backlink', 1, 'li', 1, '<i></i>'),
+                        'subscribe' => tpl_action('subscribe', 1, 'li', 1, '<i></i>'),
+                        'revert'    => tpl_action('revert', 1, 'li', 1, '<i></i>'),
+                        'top'       => tpl_action('top', 1, 'li', 1, '<i></i>'),
                     )); ?>
                 </ul>
             </div>
@@ -92,15 +92,15 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <h3><?php echo $lang['site_tools'] ?></h3>
                 <ul>
                     <?php tpl_toolsevent('sitetools', array(
-                        'recent'    => tpl_action('recent', 1, 'li', 1),
-                        'media'     => tpl_action('media', 1, 'li', 1),
-                        'index'     => tpl_action('index', 1, 'li', 1),
+                        'recent'    => tpl_action('recent', 1, 'li', 1, '<i></i>'),
+                        'media'     => tpl_action('media', 1, 'li', 1, '<i></i>'),
+                        'index'     => tpl_action('index', 1, 'li', 1, '<i></i>'),
                     )); ?>
                 </ul>
             </div>
         </div>
 
-        <div id="ipari__sidebar">
+        <div id="sidebar_bg">
         </div>
 
         <!-- ********** HEADER ********** -->
@@ -112,11 +112,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
             <div class="header_right">
                 <button id="right_button" class="menu hide_text">오른쪽</button>
             </div>
-
-            <p class="a11y skip">
-                <a href="#dokuwiki__content"><?php echo $lang['skip_to_content'] ?></a>
-            </p>
-            <hr />
         </div></div><!-- /header -->
 
 

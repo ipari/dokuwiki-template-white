@@ -8,26 +8,27 @@
     max-width: 100%;
 }
 
-#ipari__sidebar {
+#sidebar_bg {
     position: fixed;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.75);
     width: 100%;
     height: 100%;
 }
 
-#ipari__left {
+#sidebar_left {
     left: 0;
 }
 
-#ipari__right {
+#sidebar_right {
     right: 0;
 }
 
 .sidebar {
     position: fixed;
     z-index: 3;
-    width: 16em;
+    width: __sidebar_width__;
+    max-width: 66%;
     height: 100%;
     background-color: __background__;
 }

@@ -4,64 +4,116 @@
  */
 
 /* dokuwiki__header */
+#dokuwiki__header {
+    max-height: 40px;
+    border-bottom: 1px solid __border__;
+}
+#dokuwiki__header h1 {
+    margin-top: 6px;
+    overflow: hidden;
+    font: 1.8em 'Times new roman', 'Century Gothic', sans-serif;
+}
+
+#dokuwiki__header h1 a {
+    color: __text__;
+}
+
+#dokuwiki__header h1 a:hover {
+    text-decoration: none;
+}
+
 #dokuwiki__header button {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
+    margin: 8px 16px;
     border: 0 none;
     outline: none;
-    background-color: transparent;
+    background: transparent url('images/ipari-silpleline.png') no-repeat;
+    background-size: 120px 120px;
 }
 
-#left_button {
-    background-image: url('images/menu-8x.png');
+#dokuwiki__header #left_button {
+    background-position: 0 0;
 }
 
-#right_button {
-    background-image: url('images/pencil-8x.png');
+#dokuwiki__header #right_button {
+    background-position: -24px 0;
 }
 
 button.hide_text {
     text-indent: -9999px;
-    background-size: cover;
 }
 
+/* sidebar_bg */
+#sidebar_right {
 
-/* ipari__sidebar */
+}
+
+.sidebar .submenu h3 {
+    padding: 9px 12px;
+    border-bottom: 1px solid __border__;
+}
+
+.sidebar .submenu:not(:first-child) h3 {
+    margin-top: 1em;
+}
+
+.sidebar .submenu li {
+
+}
+
+.sidebar .submenu i {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 1em;
+    background: transparent url('images/ipari-silpleline.png') no-repeat;
+    background-size: 120px 120px;
+    vertical-align: -40%;
+}
+
 .sidebar .submenu a {
+    padding: 10px 12px;
+    color: __text__;
     display: block;
-    padding: 6px 10px 6px 30px;
+    vertical-align: top;
+    text-decoration: none;
+}
+
+.sidebar .submenu a:hover {
+    color: #FF00CC;
+}
+
+.sidebar .submenu li:hover {
     background-color: #eee;
-    background-position: 10px center;
-    background-size: 14px 14px;
-    background-repeat: no-repeat;
 }
 
-a.action.edit {
-    background-image: url('images/pencil-8x.png');
+a.action.edit i {
+    background-position: -24px 0;
 }
 
-a.action.revs {
-    background-image: url('images/action-undo-8x.png');
+a.action.revs i {
+    background-position: -48px -48px;
 }
 
-a.action.backlink {
-    background-image: url('images/link-intact-8x.png');
+a.action.backlink i {
+    background-position: -24px -48px;
 }
 
-a.action.top {
-    background-image: url('images/chevron-top-8x.png');
+a.action.top i {
+    background-position: -72px -48px;
 }
 
-a.action.recent {
-    background-image: url('images/calendar-8x.png');
+a.action.recent i {
+    background-position: 0 -72px;
 }
 
-a.action.media {
-    background-image: url('images/image-8x.png');
+a.action.media i {
+    background-position: -24px -72px;
 }
 
-a.action.index {
-    background-image: url('images/compass-8x.png');
+a.action.index i {
+    background-position: -48px -72px;
 }
 
 .sidebar ul {
