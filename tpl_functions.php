@@ -29,3 +29,31 @@ if (!function_exists('tpl_toolsevent')) {
         $evt->advise_after();
     }
 }
+
+function ipari_breadcrumbs() {
+    global $lang;
+    global $conf;
+
+    //check if enabled
+    if(!$conf['breadcrumbs']) return false;
+
+    $crumbs = breadcrumbs(); //setup crumb trace
+
+    $crumbs_sep = ' <span class="bcsep">'.$sep.'</span> ';
+
+    //render crumbs, highlight the last one
+    print '<h3>'.$lang['breadcrumb'].'</h3>';
+    $last = count($crumbs);
+    $i    = 0;
+    print '<ul>';
+    foreach($crumbs as $id => $name) {
+        $i++;
+        print '<li>';
+        if($i == $last) print '<span class="curid">';
+        tpl_link(wl($id), hsc($name), 'class="breadcrumbs" title="'.$id.'"');
+        if($i == $last) print '</span>';
+        print '</li>';
+    }
+    print '</ul>';
+    return true;
+}
