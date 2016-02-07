@@ -25,7 +25,7 @@
             $(this).hide('fade');
             $('#sidebar_left').hide('slide', slideOptions[0]);
             $('#sidebar_right').hide('slide', slideOptions[1]);
-        })
+        });
         $('#search_button').click(function() {
             $('div.search').toggle();
         });
