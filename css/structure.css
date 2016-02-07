@@ -5,12 +5,12 @@
  */
 
 #dokuwiki__site {
-    max-width: 100%;
+
 }
 
 #sidebar_bg {
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     background: rgba(0, 0, 0, 0.75);
     width: 100%;
     height: 100%;
@@ -26,7 +26,7 @@
 
 .sidebar {
     position: fixed;
-    z-index: 3;
+    z-index: 4;
     width: __sidebar_width__;
     max-width: 66%;
     height: 100%;
@@ -39,32 +39,38 @@
 }
 
 #dokuwiki__usertools {
-    position: absolute;
+    position: static;
+    width: inherit;
     bottom: 0;
-}
-
-.header_left {
-    float: left;
-    width: 20%;
-}
-
-.header_right {
-    float: right;
-    width: 20%;
-    text-align: right;
 }
 
 #dokuwiki__header {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     width: 100%;
     background: __background__;
 }
 
+#dokuwiki__header .header_left {
+    float: left;
+    width: 25%;
+}
+
+#dokuwiki__header .header_right {
+    float: right;
+    width: 25%;
+    text-align: right;
+}
+
+#dokuwiki__header div.search {
+    clear: both;
+    text-align: right;
+}
+
 #dokuwiki__header h1 {
     display: inline-block;
-    width: 60%;
+    width: 50%;
     text-align: center;
     margin: 0; padding: 0;
     font-size: 1.6em;
@@ -90,7 +96,12 @@
     margin: 0 0 0 1.5em;
 }
 
+#dokuwiki__content {
+    margin-top: 60px;
+}
+
 /* make content wider when there's no sidebar */
+/*
 .hasSidebar #dokuwiki__content {
     margin-top: 100px;
     margin-left: -__sidebar_width__;
@@ -114,3 +125,4 @@
     overflow: hidden;
     word-wrap: break-word;
 }
+*/

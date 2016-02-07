@@ -26,12 +26,20 @@
             $('#sidebar_left').hide('slide', slideOptions[0]);
             $('#sidebar_right').hide('slide', slideOptions[1]);
         })
+        $('#search_button').click(function() {
+            $('div.search').toggle();
+        });
     }
 
-    $(function() {
+    function initUI() {
         $('#sidebar_bg').hide();
         $('#sidebar_left').hide();
         $('#sidebar_right').hide();
+        $('div.search').hide();
+    }
+
+    $(function() {
+        initUI();
         bindEvents();
     });
 })(jQuery);

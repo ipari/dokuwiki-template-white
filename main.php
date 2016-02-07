@@ -11,7 +11,8 @@ if (!defined('DOKU_INC')) die();
 @require_once(dirname(__FILE__).'/tpl_functions.php');
 header('X-UA-Compatible: IE=edge,chrome=1');
 $showSidebar = page_findnearest($conf['sidebar']);
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang'] ?>"
   lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
 <head>
@@ -32,17 +33,16 @@ $showSidebar = page_findnearest($conf['sidebar']);
         <div id="sidebar_left" class="sidebar">
             <!-- ********** ASIDE ********** -->
             <?php if ($showSidebar): ?>
-            <div id="dokuwiki__aside" class="sidebar">
+            <div id="dokuwiki__aside" class="submenu">
                 <?php tpl_includeFile('sidebarheader.html') ?>
                 <?php tpl_include_page($conf['sidebar'], 1, 1) ?>
                 <?php tpl_includeFile('sidebarfooter.html') ?>
-                <hr class="a11y" />
             </div><!-- /aside -->
             <?php endif; ?>
 
             <!-- BREADCRUMBS -->
             <?php if($conf['breadcrumbs']){ ?>
-                <div class="breadcrumbs"><?php tpl_breadcrumbs() ?></div>
+                <div class="breadcrumbs submenu"><?php ipari_breadcrumbs() ?></div>
             <?php } ?>
             <?php if($conf['youarehere']){ ?>
                 <div class="breadcrumbs"><?php tpl_youarehere() ?></div>
@@ -50,23 +50,23 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
             <!-- USER TOOLS -->
             <?php if ($conf['useacl']): ?>
-                <div id="dokuwiki__usertools">
+                <div id="dokuwiki__usertools" class="submenu">
                     <h3><?php echo $lang['user_tools'] ?></h3>
                     <ul>
-                        <?php
-                            if (!empty($_SERVER['REMOTE_USER'])) {
-                                echo '<li class="user">';
-                                tpl_userinfo();
-                                echo '</li>';
-                            }
-                        ?>
                         <?php tpl_toolsevent('usertools', array(
-                            'admin'     => tpl_action('admin', 1, 'li', 1),
-                            'profile'   => tpl_action('profile', 1, 'li', 1),
-                            'register'  => tpl_action('register', 1, 'li', 1),
-                            'login'     => tpl_action('login', 1, 'li', 1),
+                            'admin'     => tpl_action('admin', 1, 'li', 1, '<i></i>'),
+                            'profile'   => tpl_action('profile', 1, 'li', 1, '<i></i>'),
+                            'register'  => tpl_action('register', 1, 'li', 1, '<i></i>'),
+                            'login'     => tpl_action('login', 1, 'li', 1, '<i></i>'),
                         )); ?>
                     </ul>
+                    <?php
+                        if (!empty($_SERVER['REMOTE_USER'])) {
+                            echo '<div class="user">';
+                            tpl_userinfo();
+                            echo '</div>';
+                        }
+                    ?>
                 </div>
             <?php endif ?>
         </div>
@@ -110,7 +110,11 @@ $showSidebar = page_findnearest($conf['sidebar']);
             </div>
             <h1><?php tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"') ?></h1>
             <div class="header_right">
+                <button id="search_button" class="menu hide_text">검색</button>
                 <button id="right_button" class="menu hide_text">오른쪽</button>
+            </div>
+            <div class="search">
+                <?php tpl_searchform(); ?>
             </div>
         </div></div><!-- /header -->
 

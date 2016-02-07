@@ -2,6 +2,28 @@
  * This file provides the main design styles for the page content.
  */
 
+ /* existing wikipage */
+ .dokuwiki a.wikilink1 {
+ }
+ /* not existing wikipage */
+ .dokuwiki a.wikilink2 {
+     text-decoration: none;
+ }
+ .dokuwiki a.wikilink2:link,
+ .dokuwiki a.wikilink2:visited {
+     border-bottom: none;
+ }
+ .dokuwiki a.wikilink2:hover,
+ .dokuwiki a.wikilink2:active,
+ .dokuwiki a.wikilink2:focus {
+     border-bottom-width: 0;
+ }
+
+ /* any link to current page */
+ .dokuwiki span.curid a {
+     font-weight: bold;
+ }
+
 /* undo "clever" styling from fileuploader.js */
 .qq-upload-button {
     cursor: inherit !important;

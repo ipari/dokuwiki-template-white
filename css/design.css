@@ -25,7 +25,7 @@
 #dokuwiki__header button {
     width: 24px;
     height: 24px;
-    margin: 8px 16px;
+    margin: 8px 0;
     border: 0 none;
     outline: none;
     background: transparent url('images/ipari-silpleline.png') no-repeat;
@@ -33,11 +33,28 @@
 }
 
 #dokuwiki__header #left_button {
+    margin-left: 16px;
     background-position: 0 0;
 }
 
 #dokuwiki__header #right_button {
+    margin-right: 16px;
     background-position: -24px 0;
+}
+
+#dokuwiki__header #search_button {
+    margin-right: 8px;
+    background-position: -72px 0;
+}
+
+#dokuwiki__header .search {
+    background-color: __background__;
+    width: 100%;
+}
+
+#dokuwiki__header .search button {
+    text-indent: -9999px;
+    background-position: -72px 0;
 }
 
 button.hide_text {
@@ -45,8 +62,13 @@ button.hide_text {
 }
 
 /* sidebar_bg */
-#sidebar_right {
+.sidebar .submenu {
+    background-color: __background__;
+}
 
+#sidebar_left {
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .sidebar .submenu h3 {
@@ -58,10 +80,6 @@ button.hide_text {
     margin-top: 1em;
 }
 
-.sidebar .submenu li {
-
-}
-
 .sidebar .submenu i {
     display: inline-block;
     width: 24px;
@@ -70,6 +88,11 @@ button.hide_text {
     background: transparent url('images/ipari-silpleline.png') no-repeat;
     background-size: 120px 120px;
     vertical-align: -40%;
+}
+
+.sidebar .user {
+    padding: 6px 12px;
+    overflow: hidden;
 }
 
 .sidebar .submenu a {
@@ -86,6 +109,26 @@ button.hide_text {
 
 .sidebar .submenu li:hover {
     background-color: #eee;
+}
+
+a.action.admin i {
+    background-position: -48px 0;
+}
+
+a.action.profile i {
+    background-position: 0px -24px;
+}
+
+a.action.login i {
+    background-position: -48px -24px;
+}
+
+a.action.logout i {
+    background-position: -72px -24px;
+}
+
+a.action.register i {
+    background-position: -24px -24px;
 }
 
 a.action.edit i {
