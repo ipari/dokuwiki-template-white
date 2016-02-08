@@ -57,3 +57,31 @@ function ipari_breadcrumbs() {
     print '</ul>';
     return true;
 }
+
+function ipari_pageinfo($ret = false) {
+    global $conf;
+    global $lang;
+    global $INFO;
+    global $ID;
+
+    // return if we are not allowed to view the page
+    if(!auth_quickaclcheck($ID)) {
+        return false;
+    }
+    $date = dformat($INFO['lastmod']);
+
+    // print it
+    if($INFO['exists']) {
+        $out = '';
+        $out .= $lang['lastmod'];
+        $out .= ' ';
+        $out .= $date;
+        if($ret) {
+            return $out;
+        } else {
+            echo $out;
+            return true;
+        }
+    }
+    return false;
+}

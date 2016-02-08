@@ -40,14 +40,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
             </div><!-- /aside -->
             <?php endif; ?>
 
-            <!-- BREADCRUMBS -->
-            <?php if($conf['breadcrumbs']){ ?>
-                <div class="breadcrumbs submenu"><?php ipari_breadcrumbs() ?></div>
-            <?php } ?>
-            <?php if($conf['youarehere']){ ?>
-                <div class="breadcrumbs"><?php tpl_youarehere() ?></div>
-            <?php } ?>
-
             <!-- USER TOOLS -->
             <?php if ($conf['useacl']): ?>
                 <div id="dokuwiki__usertools" class="submenu">
@@ -104,19 +96,21 @@ $showSidebar = page_findnearest($conf['sidebar']);
         </div>
 
         <!-- ********** HEADER ********** -->
-        <div id="dokuwiki__header"><div class="group">
-            <div class="header_left">
-                <button id="left_button" class="menu hide_text">왼쪽</button>
-            </div>
-            <h1><?php tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"') ?></h1>
-            <div class="header_right">
-                <button id="search_button" class="menu hide_text">검색</button>
-                <button id="right_button" class="menu hide_text">오른쪽</button>
+        <div id="dokuwiki__header">
+            <div class="group">
+                <div class="header_left">
+                    <button id="left_button" class="menu hide_text">왼쪽</button>
+                </div>
+                <h1><?php tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"') ?></h1>
+                <div class="header_right">
+                    <button id="search_button" class="menu hide_text">검색</button>
+                    <button id="right_button" class="menu hide_text">오른쪽</button>
+                </div>
             </div>
             <div class="search">
                 <?php tpl_searchform(); ?>
             </div>
-        </div></div><!-- /header -->
+        </div><!-- /header -->
 
 
         <div class="wrapper group">
@@ -124,6 +118,14 @@ $showSidebar = page_findnearest($conf['sidebar']);
             <div id="dokuwiki__content"><div class="group">
                 <?php tpl_flush() ?>
                 <?php tpl_includeFile('pageheader.html') ?>
+
+                <!-- BREADCRUMBS -->
+                <?php if($conf['breadcrumbs']){ ?>
+                    <div class="breadcrumbs"><?php tpl_breadcrumbs($ret='›') ?></div>
+                <?php } ?>
+                <?php if($conf['youarehere']){ ?>
+                    <div class="breadcrumbs"><?php tpl_youarehere() ?></div>
+                <?php } ?>
 
                 <div class="page group">
                     <!-- wikipage start -->
@@ -137,11 +139,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
             <!-- ********** FOOTER ********** -->
             <div id="dokuwiki__footer">
-
-                    <hr />
-                    <div class="doc"><?php tpl_pageinfo() ?></div>
-
-
+                    <div class="doc"><?php ipari_pageinfo() ?></div>
                 <?php tpl_license('button') ?>
             </div><!-- /footer -->
 

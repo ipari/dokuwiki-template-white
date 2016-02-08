@@ -8,6 +8,7 @@
     max-height: 40px;
     border-bottom: 1px solid __border__;
 }
+
 #dokuwiki__header h1 {
     margin-top: 6px;
     overflow: hidden;
@@ -47,14 +48,18 @@
     background-position: -72px 0;
 }
 
-#dokuwiki__header .search {
-    background-color: __background__;
-    width: 100%;
+#dokuwiki__header div.search {
+    padding: 6px 10px;
 }
 
-#dokuwiki__header .search button {
+#dokuwiki__header div.search button {
+    display: none;
     text-indent: -9999px;
     background-position: -72px 0;
+}
+
+#dokuwiki__header div.search input[type=text] {
+    padding: 4px 6px;
 }
 
 button.hide_text {
@@ -72,6 +77,7 @@ button.hide_text {
 }
 
 .sidebar .submenu h3 {
+    font-size: 1.17em;
     padding: 9px 12px;
     border-bottom: 1px solid __border__;
 }
@@ -90,6 +96,14 @@ button.hide_text {
     vertical-align: -40%;
 }
 
+.sidebar a.wikilink1 {
+    color: __text__;
+}
+
+.sidebar a.wikilink2 {
+    color: __missing__;
+}
+
 .sidebar .user {
     padding: 6px 12px;
     overflow: hidden;
@@ -104,7 +118,7 @@ button.hide_text {
 }
 
 .sidebar .submenu a:hover {
-    color: #FF00CC;
+    color: __link__;
 }
 
 .sidebar .submenu li:hover {
@@ -129,6 +143,10 @@ a.action.logout i {
 
 a.action.register i {
     background-position: -24px -24px;
+}
+
+a.action.create i {
+    background-position: 0 -48px;
 }
 
 a.action.edit i {
@@ -161,6 +179,10 @@ a.action.index i {
 
 .sidebar ul {
     list-style-type: none;
+}
+
+#dokuwiki__content div.breadcrumbs a {
+    color: __text__;
 }
 
 /* highlight selected tool */

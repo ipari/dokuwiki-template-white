@@ -18,10 +18,18 @@
 
 #sidebar_left {
     left: 0;
+    border-right: 1px solid __border__;
 }
 
 #sidebar_right {
     right: 0;
+    border-left: 1px solid __border__;
+}
+
+#sidebar_bg,
+#sidebar_left,
+#sidebar_right {
+    display: none;
 }
 
 .sidebar {
@@ -64,13 +72,15 @@
 }
 
 #dokuwiki__header div.search {
-    clear: both;
-    text-align: right;
+    float: right;
+    display: none;
 }
 
 #dokuwiki__header h1 {
     display: inline-block;
+    overflow: hidden;
     width: 50%;
+    height: 1em;
     text-align: center;
     margin: 0; padding: 0;
     font-size: 1.6em;
@@ -97,7 +107,23 @@
 }
 
 #dokuwiki__content {
-    margin-top: 60px;
+    margin-top: 40px;
+}
+
+#dokuwiki__content div.breadcrumbs {
+    height: 1em;
+    margin-bottom: 1em;
+    padding: 0.4em 1em;
+    overflow-y: hidden;
+    opacity: 0.4;
+}
+
+#dokuwiki__content div.breadcrumbs:hover {
+    opacity: 1.0;
+}
+
+#dokuwiki__content .page {
+    padding: 1em;
 }
 
 /* make content wider when there's no sidebar */

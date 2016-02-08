@@ -28,14 +28,11 @@
         });
         $('#search_button').click(function() {
             $('div.search').toggle();
+            $('div.search').find('input.edit').focus();
         });
     }
 
     function initUI() {
-        $('#sidebar_bg').hide();
-        $('#sidebar_left').hide();
-        $('#sidebar_right').hide();
-        $('div.search').hide();
     }
 
     $(function() {
