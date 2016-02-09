@@ -18,12 +18,12 @@
 
 #sidebar_left {
     left: 0;
-    border-right: 1px solid __border__;
+    border-right: 1px solid @ini_border;
 }
 
 #sidebar_right {
     right: 0;
-    border-left: 1px solid __border__;
+    border-left: 1px solid @ini_border;
 }
 
 #sidebar_bg,
@@ -35,10 +35,10 @@
 .sidebar {
     position: fixed;
     z-index: 4;
-    width: __sidebar_width__;
+    width: @ini_sidebar_width;
     max-width: 66%;
     height: 100%;
-    background-color: __background__;
+    background-color: @ini_background;
 }
 
 .sidebar * {
@@ -57,7 +57,7 @@
     z-index: 2;
     top: 0;
     width: 100%;
-    background: __background__;
+    background: @ini_background;
 }
 
 #dokuwiki__header .header_left {
@@ -88,7 +88,7 @@
 
 #dokuwiki__site .wrapper {
     margin: 0 auto;
-    max-width: __site_width__;
+    max-width: @ini_site_width;
     position: relative;
 }
 
@@ -127,7 +127,7 @@
 }
 
 #dokuwiki__footer {
-    border-top: 1px solid __border__;
+    border-top: 1px solid @ini_border;
     padding: 0.5em 1em;
 }
 
@@ -135,20 +135,20 @@
 /*
 .hasSidebar #dokuwiki__content {
     margin-top: 100px;
-    margin-left: -__sidebar_width__;
+    margin-left: -@ini_sidebar_width
     width: 100%;
 }
 [dir=rtl] .hasSidebar #dokuwiki__content {
     margin-left: 0;
-    margin-right: -__sidebar_width__;
+    margin-right: -@ini_sidebar_width
 }
 
 .hasSidebar #dokuwiki__content > div {
-    margin-left: __sidebar_width__;
+    margin-left: @ini_sidebar_width
 }
 [dir=rtl] .hasSidebar #dokuwiki__content > div {
     margin-left: 0;
-    margin-right: __sidebar_width__;
+    margin-right: @ini_sidebar_width
 }
 
 .dokuwiki .aside,

@@ -4,12 +4,12 @@
 
 /* existing wikipage */
 #dokuwiki__content a.wikilink1 {
-    color: __link__;
+    color: @ini_link;
 }
 /* not existing wikipage */
 #dokuwiki__content a.wikilink2 {
-    border-bottom: 1px dashed __missing__;
-    color: __missing__;
+    border-bottom: 1px dashed @ini_missing;
+    color: @ini_missing;
 }
 #dokuwiki__content a.wikilink2:link,
 #dokuwiki__content a.wikilink2:visited {
@@ -42,5 +42,5 @@
 
 .JSpopup {
     padding: 0.2em 0.4em;
-    border: 1px solid __border__;
+    border: 1px solid @ini_border;
 }
