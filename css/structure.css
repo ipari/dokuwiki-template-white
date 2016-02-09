@@ -126,6 +126,11 @@
     padding: 1em;
 }
 
+#dokuwiki__footer {
+    border-top: 1px solid __border__;
+    padding: 0.5em 1em;
+}
+
 /* make content wider when there's no sidebar */
 /*
 .hasSidebar #dokuwiki__content {

@@ -2,6 +2,34 @@
  * This file provides the main design styles for the page content.
  */
 
+/* table of contents */
+#dw__toc {
+    float: inherit;
+    width: auto;
+    margin: 0 0 1.4em 0;
+    border: 1px solid __border__;
+    background-color: __background__;
+}
+
+#dw__toc h3.toggle {
+    margin: 0;
+    font-size: 1em;
+}
+
+#dw__toc h3.toggle.closed {
+    border: none;
+}
+
+#dw__toc > h3,
+#dw__toc > div {
+    padding: 0.4em 0.8em;
+}
+
+#dw__toc a {
+    color: __text__;
+}
+
+
 /* existing wikipage */
 #dokuwiki__content a.wikilink1 {
     color: __link__;
@@ -17,7 +45,7 @@
 }
 #dokuwiki__content a.wikilink2:hover,
 #dokuwiki__content a.wikilink2:active,
-#dokuwiki__content  a.wikilink2:focus {
+#dokuwiki__content a.wikilink2:focus {
     border-bottom-width: 0;
 }
 

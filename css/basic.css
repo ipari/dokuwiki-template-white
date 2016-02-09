@@ -91,15 +91,6 @@ audio {
 }
 
 /* lists */
-ul,
-ol {
-    padding: 0 0 0 1.5em;
-}
-[dir=rtl] ul,
-[dir=rtl] ol {
-    padding: 0 1.5em 0 0;
-}
-
 li,
 dd {
     padding: 0;

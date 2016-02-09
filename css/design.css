@@ -96,11 +96,11 @@ button.hide_text {
     vertical-align: -40%;
 }
 
-.sidebar a.wikilink1 {
+.dokuwiki .sidebar a.wikilink1 {
     color: __text__;
 }
 
-.sidebar a.wikilink2 {
+.dokuwiki .sidebar a.wikilink2 {
     color: __missing__;
 }
 
@@ -147,6 +147,14 @@ a.action.register i {
 
 a.action.create i {
     background-position: 0 -48px;
+}
+
+a.action.show i {
+    background-position: -24px -96px;
+}
+
+a.action.source i {
+    background-position: 0 -96px;
 }
 
 a.action.edit i {
