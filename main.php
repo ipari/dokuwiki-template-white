@@ -30,88 +30,96 @@ $showSidebar = page_findnearest($conf['sidebar']);
         <?php html_msgarea() ?>
         <?php tpl_includeFile('header.html') ?>
 
-        <div id="sidebar_left" class="sidebar">
-            <!-- ********** ASIDE ********** -->
-            <?php if ($showSidebar): ?>
-            <div id="dokuwiki__aside" class="submenu">
-                <?php tpl_includeFile('sidebarheader.html') ?>
-                <?php tpl_include_page($conf['sidebar'], 1, 1) ?>
-                <?php tpl_includeFile('sidebarfooter.html') ?>
-            </div><!-- /aside -->
-            <?php endif; ?>
-
-            <!-- USER TOOLS -->
-            <?php if ($conf['useacl']): ?>
-                <div id="dokuwiki__usertools" class="submenu">
-                    <h3><?php echo $lang['user_tools'] ?></h3>
-                    <ul>
-                        <?php tpl_toolsevent('usertools', array(
-                            'admin'     => tpl_action('admin', 1, 'li', 1, '<i></i>'),
-                            'profile'   => tpl_action('profile', 1, 'li', 1, '<i></i>'),
-                            'register'  => tpl_action('register', 1, 'li', 1, '<i></i>'),
-                            'login'     => tpl_action('login', 1, 'li', 1, '<i></i>'),
-                        )); ?>
-                    </ul>
-                    <?php
-                        if (!empty($_SERVER['REMOTE_USER'])) {
-                            echo '<div class="user">';
-                            tpl_userinfo();
-                            echo '</div>';
-                        }
-                    ?>
-                </div>
-            <?php endif ?>
-        </div>
-
-        <div id="sidebar_right" class="sidebar">
-            <!-- PAGE TOOLS -->
-            <div id="dokuwiki__pagetools" class="submenu">
-                <h3><?php echo $lang['page_tools'] ?></h3>
-                <ul>
-                    <?php tpl_toolsevent('pagetools', array(
-                        'edit'      => tpl_action('edit', 1, 'li', 1, '<i></i>'),
-                        'revisions' => tpl_action('revisions', 1, 'li', 1, '<i></i>'),
-                        'backlink'  => tpl_action('backlink', 1, 'li', 1, '<i></i>'),
-                        'subscribe' => tpl_action('subscribe', 1, 'li', 1, '<i></i>'),
-                        'revert'    => tpl_action('revert', 1, 'li', 1, '<i></i>'),
-                        'top'       => tpl_action('top', 1, 'li', 1, '<i></i>'),
-                    )); ?>
-                </ul>
-            </div>
-
-            <!-- SITE TOOLS -->
-            <div id="dokuwiki__sitetools" class="submenu">
-                <h3><?php echo $lang['site_tools'] ?></h3>
-                <ul>
-                    <?php tpl_toolsevent('sitetools', array(
-                        'recent'    => tpl_action('recent', 1, 'li', 1, '<i></i>'),
-                        'media'     => tpl_action('media', 1, 'li', 1, '<i></i>'),
-                        'index'     => tpl_action('index', 1, 'li', 1, '<i></i>'),
-                    )); ?>
-                </ul>
-            </div>
-        </div>
-
-        <div id="sidebar_bg">
-        </div>
-
         <!-- ********** HEADER ********** -->
         <div id="dokuwiki__header">
+        <header>
             <div class="group">
-                <div class="header_left">
-                    <button id="left_button" class="menu hide_text">왼쪽</button>
-                </div>
                 <h1><?php tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"') ?></h1>
-                <div class="header_right">
-                    <button id="search_button" class="menu hide_text">검색</button>
-                    <button id="right_button" class="menu hide_text">오른쪽</button>
+                <div class="left">
+                    <button class="btn_left">Nav</button>
+                </div>
+                <div class="right">
+                    <button class="btn_search">Search</button>
+                    <button class="btn_right">Edit</button>
                 </div>
             </div>
             <div class="search">
                 <?php tpl_searchform(); ?>
             </div>
+        </header>
         </div><!-- /header -->
 
+        <!-- ********** sidebar ********** -->
+        <div id="sidebar_wrapper">
+            <div id="sidebar_left" class="sidebar">
+            <nav>
+                <!-- ********** ASIDE ********** -->
+                <?php if ($showSidebar): ?>
+                <div id="dokuwiki__aside">
+                    <?php tpl_includeFile('sidebarheader.html') ?>
+                    <?php tpl_include_page($conf['sidebar'], 1, 1) ?>
+                    <?php tpl_includeFile('sidebarfooter.html') ?>
+                </div><!-- /aside -->
+                <?php endif; ?>
+
+                <!-- USER TOOLS -->
+                <?php if ($conf['useacl']): ?>
+                    <div id="dokuwiki__usertools">
+                        <h3><?php echo $lang['user_tools'] ?></h3>
+                        <ul>
+                            <?php tpl_toolsevent('usertools', array(
+                                'admin'     => tpl_action('admin', 1, 'li', 1, '<i></i>'),
+                                'profile'   => tpl_action('profile', 1, 'li', 1, '<i></i>'),
+                                'register'  => tpl_action('register', 1, 'li', 1, '<i></i>'),
+                                'login'     => tpl_action('login', 1, 'li', 1, '<i></i>'),
+                            )); ?>
+                        </ul>
+                        <?php
+                            if (!empty($_SERVER['REMOTE_USER'])) {
+                                echo '<div class="user">';
+                                tpl_userinfo();
+                                echo '</div>';
+                            }
+                        ?>
+                    </div>
+                <?php endif ?>
+            </nav>
+            </div>
+
+            <div id="sidebar_right" class="sidebar left">
+            <nav>
+                <!-- PAGE TOOLS -->
+                <div id="dokuwiki__pagetools">
+                    <h3><?php echo $lang['page_tools'] ?></h3>
+                    <ul>
+                        <?php tpl_toolsevent('pagetools', array(
+                            'edit'      => tpl_action('edit', 1, 'li', 1, '<i></i>'),
+                            'revisions' => tpl_action('revisions', 1, 'li', 1, '<i></i>'),
+                            'backlink'  => tpl_action('backlink', 1, 'li', 1, '<i></i>'),
+                            'subscribe' => tpl_action('subscribe', 1, 'li', 1, '<i></i>'),
+                            'revert'    => tpl_action('revert', 1, 'li', 1, '<i></i>'),
+                            'top'       => tpl_action('top', 1, 'li', 1, '<i></i>'),
+                        )); ?>
+                    </ul>
+                </div>
+
+                <!-- SITE TOOLS -->
+                <div id="dokuwiki__sitetools">
+                    <h3><?php echo $lang['site_tools'] ?></h3>
+                    <ul>
+                        <?php tpl_toolsevent('sitetools', array(
+                            'recent'    => tpl_action('recent', 1, 'li', 1, '<i></i>'),
+                            'media'     => tpl_action('media', 1, 'li', 1, '<i></i>'),
+                            'index'     => tpl_action('index', 1, 'li', 1, '<i></i>'),
+                        )); ?>
+                    </ul>
+                </div>
+            </nav>
+            </div>
+
+            <div id="sidebar_bg">
+            </div>
+        </div><!-- /sidebar_wrapper -->
 
         <div class="wrapper group">
             <!-- ********** CONTENT ********** -->

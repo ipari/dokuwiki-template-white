@@ -15,10 +15,10 @@
     }
 
     function bindEvents() {
-        $('#left_button').click(function() {
+        $('.btn_left').click(function() {
             toggle_left();
         });
-        $('#right_button').click(function() {
+        $('.btn_right').click(function() {
             toggle_right();
         });
         $('#sidebar_bg').click(function() {
@@ -26,7 +26,7 @@
             $('#sidebar_left').hide('slide', slideOptions[0]);
             $('#sidebar_right').hide('slide', slideOptions[1]);
         });
-        $('#search_button').click(function() {
+        $('.btn_search').click(function() {
             $('div.search').toggle();
             $('div.search').find('input.edit').focus();
         });

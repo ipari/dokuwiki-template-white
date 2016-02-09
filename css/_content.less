@@ -1,3 +1,7 @@
+/**
+ * This file provides the main design styles for the page content.
+ */
+
 /* existing wikipage */
 #dokuwiki__content a.wikilink1 {
     color: @ini_link;
@@ -15,33 +19,6 @@
 #dokuwiki__content a.wikilink2:active,
 #dokuwiki__content a.wikilink2:focus {
     border-bottom-width: 0;
-}
-
-/* table of contents */
-#dw__toc {
-    float: inherit;
-    width: auto;
-    margin: 0 0 1.4em 0;
-    border: 1px solid @ini_border;
-    background-color: @ini_background;
-
-    span {
-        float: right;
-    }
-    h3,
-    div {
-        padding: .4em .8em;
-    }
-    h3.toggle {
-        margin: 0;
-        font-size: 1em;
-    }
-    h3.closed {
-        border: none;
-    }
-    a {
-        color: @ini_text;
-    }
 }
 
 /* any link to current page */
