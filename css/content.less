@@ -81,12 +81,13 @@
         display: block;
         padding: 0;
         font-weight: bold;
-        font-size: 1.666em;
+        font-size: 1.4em;
     }
 
     span {
         display: inline-block;
         margin: 0 0 .2em 0;
+        vertical-align: top;
     }
 
     label.block {
@@ -106,10 +107,6 @@
 /* login */
 #dw__login,
 #dw__register {
-    legend {
-        /* hide in case of only one fieldset exists */
-        display: none;
-    }
     label.simple {
         margin-left: 0;
     }
@@ -146,9 +143,6 @@
                 margin-top: -1.2em;
             }
         }
-        td.value {
-
-        }
         td {
             div.input {
                 width: auto;
@@ -164,5 +158,29 @@
                 border: none;
             }
         }
+        div.selection {
+            width: 40%;
+            padding: 2px 4px;
+
+            label {
+                width: 90%;
+            }
+        }
+        div.other {
+            background: none;
+        }
+    }
+}
+
+/* media manager */
+#mediamanager__page {
+    min-width: 0 !important;
+
+    .filelist {
+        width: 70%;
+        min-width: 0;
+    }
+    ul.rows dd.size {
+        width: 6em !important;
     }
 }
