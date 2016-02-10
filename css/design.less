@@ -27,9 +27,10 @@
     border-bottom: 1px solid @ini_border;
 
     h1 {
-        margin: 4px 0 0 0;
+        margin: 5px 0 0 0;
         overflow: hidden;
-        font: 1.8em 'Times new roman', 'Century Gothic', sans-serif;
+        text-overflow: ellipsis;
+        font: 1.8em 'Times new roman', Times, serif;
         white-space: nowrap;
     }
     a,
@@ -96,6 +97,11 @@
 #sidebar_bg {
     display: none;
     background-color: rgba(0, 0, 0, .75);
+}
+#dokuwiki__usertools.bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 .sidebar {
     overflow-x: hidden;
@@ -199,6 +205,18 @@
         background-position: -48px -72px;
     }
 }
+#to_top {
+    input.button {
+        width: 48px;
+        height: 48px;
+        border: 0;
+        background: transparent url('images/ipari-silpleline.png') no-repeat;
+        background-size: 240px 240px;
+        background-position: -144px -96px;
+        opacity: 0.2;
+        text-indent: -9999px;
+    }
+}
 
 /* content */
 #dokuwiki__content {
@@ -221,6 +239,21 @@
 #dokuwiki__footer {
     border-top: 1px solid @ini_border;
     padding: 0.5em 1em;
+
+    div.doc {
+        margin-bottom: .6em;
+    }
+    .license {
+        > a {
+            display: block;
+            float: left;
+            margin-right: .5em;
+            height: 2em;
+        }
+    }
 }
 
+.license a.urlextern {
+    display: none;
+}
 /* icons */

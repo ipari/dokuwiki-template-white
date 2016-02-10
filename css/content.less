@@ -1,20 +1,28 @@
-/* existing wikipage */
-#dokuwiki__content a.wikilink1 {
-    color: @ini_link;
-}
-/* not existing wikipage */
-#dokuwiki__content a.wikilink2 {
-    border-bottom: 1px dashed @ini_missing;
-    color: @ini_missing;
-}
-#dokuwiki__content a.wikilink2:link,
-#dokuwiki__content a.wikilink2:visited {
-    border-bottom: none;
-}
-#dokuwiki__content a.wikilink2:hover,
-#dokuwiki__content a.wikilink2:active,
-#dokuwiki__content a.wikilink2:focus {
-    border-bottom-width: 0;
+/* content */
+#dokuwiki__content {
+    /* existing wikipage */
+    a.wikilink1 {
+        color: @ini_link;
+    }
+    /* not existing wikipage */
+    a.wikilink2 {
+        border-bottom: 1px dashed @ini_missing;
+        color: @ini_missing;
+    }
+    a.wikilink2:link,
+    a.wikilink2:visited {
+        border-bottom: none;
+    }
+    a.wikilink2:hover,
+    a.wikilink2:active,
+    a.wikilink2:focus {
+        border-bottom-width: 0;
+    }
+    div.license {
+        margin: 0 -1em;
+        padding: .4em 1em;
+        background-color: @ini_background_alt;
+    }
 }
 
 /* table of contents */
@@ -66,6 +74,15 @@
 .JSpopup {
     padding: 0.2em 0.4em;
     border: 1px solid @ini_border;
+}
+
+/* editor */
+.dokuwiki .editBar {
+    .editButtons,
+    .summary {
+        display: block !important;
+        margin-bottom: .6em;
+    }
 }
 
 /* fields */

@@ -98,7 +98,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
                             'backlink'  => tpl_action('backlink', 1, 'li', 1, '<i></i>'),
                             'subscribe' => tpl_action('subscribe', 1, 'li', 1, '<i></i>'),
                             'revert'    => tpl_action('revert', 1, 'li', 1, '<i></i>'),
-                            'top'       => tpl_action('top', 1, 'li', 1, '<i></i>'),
                         )); ?>
                     </ul>
                 </div>
@@ -118,6 +117,10 @@ $showSidebar = page_findnearest($conf['sidebar']);
             </div>
 
             <div id="sidebar_bg">
+            </div>
+
+            <div id="to_top">
+                <?php tpl_action('top') ?>
             </div>
         </div><!-- /sidebar_wrapper -->
 
@@ -147,8 +150,8 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
             <!-- ********** FOOTER ********** -->
             <div id="dokuwiki__footer">
-                    <div class="doc"><?php ipari_pageinfo() ?></div>
-                <?php tpl_license('button') ?>
+                <div class="doc"><?php ipari_pageinfo() ?></div>
+                <?php tpl_license('badge', false, false) ?>
             </div><!-- /footer -->
 
             <?php tpl_includeFile('footer.html') ?>

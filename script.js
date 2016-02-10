@@ -1,30 +1,61 @@
 (function($) {
-    var slideOptions = [
-        {direction: 'left', duration: 200},
-        {direction: 'right', duration: 200}
-    ];
+    var resizeTimer;
+    var fadeOption = {duration: 150};
 
-    function toggle_left() {
-        $('#sidebar_bg').show('fade');
-        $('#sidebar_left').show('slide', slideOptions[0]);
+    function toggleLeft() {
+        $('#sidebar_bg').show('fade', fadeOption);
+        $('#sidebar_left').show();
     }
 
-    function toggle_right() {
-        $('#sidebar_bg').show('fade');
-        $('#sidebar_right').show('slide', slideOptions[1]);
+    function toggleRight() {
+        $('#sidebar_bg').show('fade', fadeOption);
+        $('#sidebar_right').show();
+    }
+
+    function anchorUsertools() {
+        var heightWindow = $(window).height();
+        var heightAside = $('#dokuwiki__aside').height();
+        var heightUsertools = $('#dokuwiki__usertools').outerHeight();
+        if (heightAside + heightUsertools > heightWindow) {
+            $('#dokuwiki__usertools').removeClass('bottom');
+        } else {
+            $('#dokuwiki__usertools').addClass('bottom');
+        }
+    }
+
+    function preventParentWheel(e) {
+    	var curScrollPos = $(this).scrollTop();
+    	var scrollableDist = $(this).prop('scrollHeight') - $(this).outerHeight();
+    	var wheelEvent = e.originalEvent;
+    	var dY = wheelEvent.deltaY;
+
+    	if (dY < 0 && curScrollPos <= 0) {
+    		return false;
+    	}
+    	if (dY > 0 && curScrollPos >= scrollableDist) {
+    		return false;
+    	}
     }
 
     function bindEvents() {
+        $(window).bind('resize', function() {
+                if (resizeTimer) clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(anchorUsertools, 100);
+            }
+        );
+        $('.sidebar').on('wheel scroll', preventParentWheel);
         $('.btn_left').click(function() {
-            toggle_left();
+            toggleLeft();
+            anchorUsertools();
+            lastScrollTop = $(window).scrollTop();
         });
         $('.btn_right').click(function() {
-            toggle_right();
+            toggleRight();
         });
         $('#sidebar_bg').click(function() {
-            $(this).hide('fade');
-            $('#sidebar_left').hide('slide', slideOptions[0]);
-            $('#sidebar_right').hide('slide', slideOptions[1]);
+            $(this).hide('fade', fadeOption);
+            $('#sidebar_left').hide();
+            $('#sidebar_right').hide();
         });
         $('.btn_search').click(function() {
             $('div.search').toggle();
