@@ -1,0 +1,41 @@
+@media only screen and (max-width: 760px) {
+
+/* admin */
+.dokuwiki ul.admin_tasks {
+    float: none;
+    width: auto;
+    margin: 0;
+}
+
+/* config */
+#config__manager {
+    fieldset {
+        legend {
+            padding: 0;
+        }
+        td.label,
+        td.value {
+            display: block;
+            width: auto !important;
+        }
+        td.label {
+            padding: .2em .4em;
+            border: none;
+        }
+        td.value {
+            padding: .4em .4em 1.2em;
+            border: none;
+            background: @ini_background;
+        }
+        div.selection {
+            width: 100%;
+
+            input,
+            label {
+                float: left;
+            }
+        }
+    }
+}
+
+} /* media */

@@ -67,3 +67,102 @@
     padding: 0.2em 0.4em;
     border: 1px solid @ini_border;
 }
+
+/* fields */
+.dokuwiki fieldset {
+    width: auto;
+    text-align:left;
+    margin: 0 0 1em 0;
+    padding: 1em;
+    border: none;
+    background: @ini_background_alt;
+
+    legend {
+        display: block;
+        padding: 0;
+        font-weight: bold;
+        font-size: 1.666em;
+    }
+
+    span {
+        display: inline-block;
+        margin: 0 0 .2em 0;
+    }
+
+    label.block {
+        text-align: left;
+
+        span {
+            display: block;
+        }
+
+        input.edit {
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+}
+
+/* login */
+#dw__login,
+#dw__register {
+    legend {
+        /* hide in case of only one fieldset exists */
+        display: none;
+    }
+    label.simple {
+        margin-left: 0;
+    }
+}
+
+/* admin */
+#admin__version {
+    margin-bottom: 2em;
+}
+
+/* config */
+#config__manager {
+    fieldset {
+        margin: 0 0 2em 0;
+        padding: 0;
+        border: none;
+        background: none;
+
+        legend {
+            text-align: left;
+            font-size: 1.666em; // same as h3
+        }
+        div.table {
+            width: 100%;
+            padding: 0;
+            background: @ini_background_alt;
+        }
+        table {
+            width: 100%;
+        }
+        td.label {
+            padding: .4em .4em 1em;
+            span.outkey {
+                margin-top: -1.2em;
+            }
+        }
+        td.value {
+
+        }
+        td {
+            div.input {
+                width: auto;
+                padding: 2px 4px;
+            }
+            input.edit {
+                padding: 4px 6px;
+            }
+            input.edit,
+            select.edit,
+            textarea.edit {
+                width: 100%;
+                border: none;
+            }
+        }
+    }
+}
