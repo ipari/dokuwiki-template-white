@@ -1,0 +1,78 @@
+/**
+ * This file provides the styles for printing.
+ */
+
+/* hide certain sections */
+audio,
+video,
+.sidebar,
+.breadcrumbs,
+#dokuwiki__header .left,
+#dokuwiki__header .right,
+#dokuwiki__header .search,
+#dw__toc span,
+#dokuwiki__footer .doc,
+#to_top {
+    display: none;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    border-bottom: 1pt dotted;
+    color: #333;
+    background-color: inherit;
+}
+
+#dokuwiki__header,
+#dw__toc {
+    a:link,
+    a:visited {
+        border: none;
+    }
+}
+
+/* code blocks */
+pre {
+    font-family: monospace;
+}
+dl.code dt,
+dl.file dt {
+    font-weight: bold;
+}
+
+/* images */
+img {
+    border-width: 0;
+    vertical-align: middle;
+}
+
+
+/*____________ a bit of layout ____________*/
+
+#dokuwiki__header {
+    border-bottom: 1pt solid #999;
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+#dokuwiki__footer {
+    border-top: 1pt solid #999;
+    div.license {
+        padding-top: .5em;
+        > a {
+            display: inline-block;
+            float: left;
+            margin: .2em .5em 0 0;
+        }
+    }
+}
+
+.dokuwiki div.footnotes {
+    clear: both;
+    border-top: 1pt solid #000;
+    margin-top: 10pt;
+    padding: 1em 0;
+}
