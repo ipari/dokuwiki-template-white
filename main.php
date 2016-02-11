@@ -36,7 +36,9 @@ $showSidebar = page_findnearest($conf['sidebar']);
             <div class="group">
                 <h1><?php tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"') ?></h1>
                 <div class="left">
+                    <?php if ($showSidebar): ?>
                     <button class="btn_left">Nav</button>
+                    <?php endif; ?>
                 </div>
                 <div class="right">
                     <button class="btn_search">Search</button>
@@ -51,42 +53,19 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
         <!-- ********** sidebar ********** -->
         <div id="sidebar_wrapper">
-            <div id="sidebar_left" class="sidebar">
+
+            <!-- ********** ASIDE ********** -->
+            <?php if ($showSidebar): ?>
+            <div id="dokuwiki__aside"  class="sidebar">
             <nav>
-                <!-- ********** ASIDE ********** -->
-                <?php if ($showSidebar): ?>
-                <div id="dokuwiki__aside">
-                    <?php tpl_includeFile('sidebarheader.html') ?>
-                    <?php tpl_include_page($conf['sidebar'], 1, 1) ?>
-                    <?php tpl_includeFile('sidebarfooter.html') ?>
-                </div><!-- /aside -->
-                <?php endif; ?>
-
-                <!-- USER TOOLS -->
-                <?php if ($conf['useacl']): ?>
-                    <div id="dokuwiki__usertools">
-                        <h3><?php echo $lang['user_tools'] ?></h3>
-                        <ul>
-                            <?php tpl_toolsevent('usertools', array(
-                                'admin'     => tpl_action('admin', 1, 'li', 1, '<i></i>'),
-                                'profile'   => tpl_action('profile', 1, 'li', 1, '<i></i>'),
-                                'register'  => tpl_action('register', 1, 'li', 1, '<i></i>'),
-                                'login'     => tpl_action('login', 1, 'li', 1, '<i></i>'),
-                            )); ?>
-                        </ul>
-                        <?php
-                            if (!empty($_SERVER['REMOTE_USER'])) {
-                                echo '<div class="user">';
-                                tpl_userinfo();
-                                echo '</div>';
-                            }
-                        ?>
-                    </div>
-                <?php endif ?>
+                <?php tpl_includeFile('sidebarheader.html') ?>
+                <?php tpl_include_page($conf['sidebar'], 1, 1) ?>
+                <?php tpl_includeFile('sidebarfooter.html') ?>
             </nav>
-            </div>
+            </div><!-- /dokuwiki__aside -->
+            <?php endif; ?>
 
-            <div id="sidebar_right" class="sidebar left">
+            <div id="dokuwiki__tools" class="sidebar left">
             <nav>
                 <!-- PAGE TOOLS -->
                 <div id="dokuwiki__pagetools">
@@ -100,7 +79,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                             'revert'    => tpl_action('revert', 1, 'li', 1, '<i></i>'),
                         )); ?>
                     </ul>
-                </div>
+                </div><!-- /dokuwiki__pagetools -->
 
                 <!-- SITE TOOLS -->
                 <div id="dokuwiki__sitetools">
@@ -112,9 +91,31 @@ $showSidebar = page_findnearest($conf['sidebar']);
                             'index'     => tpl_action('index', 1, 'li', 1, '<i></i>'),
                         )); ?>
                     </ul>
-                </div>
+                </div><!-- /dokuwiki__sitetools -->
+
+                <!-- USER TOOLS -->
+                <?php if ($conf['useacl']): ?>
+                <div id="dokuwiki__usertools">
+                    <h3><?php echo $lang['user_tools'] ?></h3>
+                    <ul>
+                        <?php tpl_toolsevent('usertools', array(
+                            'admin'     => tpl_action('admin', 1, 'li', 1, '<i></i>'),
+                            'profile'   => tpl_action('profile', 1, 'li', 1, '<i></i>'),
+                            'register'  => tpl_action('register', 1, 'li', 1, '<i></i>'),
+                            'login'     => tpl_action('login', 1, 'li', 1, '<i></i>'),
+                        )); ?>
+                    </ul>
+                    <?php
+                        if (!empty($_SERVER['REMOTE_USER'])) {
+                            echo '<div class="user">';
+                            tpl_userinfo();
+                            echo '</div>';
+                        }
+                    ?>
+                </div><!-- /dokuwiki__usertools -->
+                <?php endif ?>
             </nav>
-            </div>
+            </div><!-- /dokuwiki__tools -->
 
             <div id="sidebar_bg">
             </div>

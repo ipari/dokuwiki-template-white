@@ -14,6 +14,8 @@
     div.left {
         width: 25%;
         float: left;
+        /* trick for keep width when aside is deactivated */
+        min-height: 1px;
     }
     div.right {
         width: 25%;
@@ -34,10 +36,10 @@
     height: 100%;
 }
 
-#sidebar_left {
+#dokuwiki__aside {
     left: 0;
 }
-#sidebar_right {
+#dokuwiki__tools {
     right: 0;
 }
 #sidebar_bg {

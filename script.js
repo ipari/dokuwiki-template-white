@@ -1,26 +1,14 @@
 (function($) {
-    var resizeTimer;
     var fadeOption = {duration: 150};
 
     function toggleLeft() {
         $('#sidebar_bg').show('fade', fadeOption);
-        $('#sidebar_left').show();
+        $('#dokuwiki__aside').show();
     }
 
     function toggleRight() {
         $('#sidebar_bg').show('fade', fadeOption);
-        $('#sidebar_right').show();
-    }
-
-    function anchorUsertools() {
-        var heightWindow = $(window).height();
-        var heightAside = $('#dokuwiki__aside').height();
-        var heightUsertools = $('#dokuwiki__usertools').outerHeight();
-        if (heightAside + heightUsertools > heightWindow) {
-            $('#dokuwiki__usertools').removeClass('bottom');
-        } else {
-            $('#dokuwiki__usertools').addClass('bottom');
-        }
+        $('#dokuwiki__tools').show();
     }
 
     function preventParentWheel(e) {
@@ -38,24 +26,17 @@
     }
 
     function bindEvents() {
-        $(window).bind('resize', function() {
-                if (resizeTimer) clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(anchorUsertools, 100);
-            }
-        );
         $('.sidebar').on('wheel scroll', preventParentWheel);
         $('.btn_left').click(function() {
             toggleLeft();
-            anchorUsertools();
-            lastScrollTop = $(window).scrollTop();
         });
         $('.btn_right').click(function() {
             toggleRight();
         });
         $('#sidebar_bg').click(function() {
             $(this).hide('fade', fadeOption);
-            $('#sidebar_left').hide();
-            $('#sidebar_right').hide();
+            $('#dokuwiki__aside').hide();
+            $('#dokuwiki__tools').hide();
         });
         $('.btn_search').click(function() {
             $('div.search').toggle();
