@@ -32,7 +32,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
         <!-- ********** HEADER ********** -->
         <div id="dokuwiki__header">
-        <header>
             <div class="group">
                 <h1><?php tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"') ?></h1>
                 <div class="left">
@@ -48,25 +47,20 @@ $showSidebar = page_findnearest($conf['sidebar']);
             <div class="search">
                 <?php tpl_searchform(); ?>
             </div>
-        </header>
         </div><!-- /header -->
 
         <!-- ********** sidebar ********** -->
         <div id="sidebar_wrapper">
-
             <!-- ********** ASIDE ********** -->
             <?php if ($showSidebar): ?>
             <div id="dokuwiki__aside"  class="sidebar">
-            <nav>
                 <?php tpl_includeFile('sidebarheader.html') ?>
                 <?php tpl_include_page($conf['sidebar'], 1, 1) ?>
                 <?php tpl_includeFile('sidebarfooter.html') ?>
-            </nav>
             </div><!-- /dokuwiki__aside -->
             <?php endif; ?>
 
             <div id="dokuwiki__tools" class="sidebar left">
-            <nav>
                 <!-- PAGE TOOLS -->
                 <div id="dokuwiki__pagetools">
                     <h3><?php echo $lang['page_tools'] ?></h3>
@@ -114,7 +108,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     ?>
                 </div><!-- /dokuwiki__usertools -->
                 <?php endif ?>
-            </nav>
             </div><!-- /dokuwiki__tools -->
 
             <div id="sidebar_bg">
