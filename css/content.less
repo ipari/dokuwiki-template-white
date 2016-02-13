@@ -85,6 +85,7 @@
     }
 }
 
+
 /* fields */
 .dokuwiki fieldset {
     width: auto;
@@ -193,11 +194,28 @@
 #mediamanager__page {
     min-width: 0 !important;
 
-    .filelist {
-        width: 70%;
+    .namespaces {
         min-width: 0;
     }
-    ul.rows dd.size {
-        width: 6em !important;
+    .filelist {
+        min-width: 0;
+        .rows li  {
+            dt a {
+                vertical-align: top;
+            }
+            dt a img {
+                max-width: 100%;
+            }
+            .name,
+            .size,
+            .filesize,
+            .date {
+                white-space: normal;
+                word-wrap: break-word;
+            }
+        }
+    }
+    .file {
+        min-width: 0;
     }
 }
