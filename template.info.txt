@@ -1,7 +1,7 @@
-base     starter
-author   Kwangyoung Lee
+base     white
+author   Lee, Kwangyoung
 email    ipari@leaflette.com
-date     2016-01-31
-name     ipari
+date     2016-02-15
+name     White Template
 desc     Minimal Template
-url      https://www.dokuwiki.org/template:ipari
+url      https://www.dokuwiki.org/template:white
