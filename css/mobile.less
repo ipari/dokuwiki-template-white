@@ -106,4 +106,17 @@
     }
 }
 
-} /* media */
+} /* @media */
+
+
+/* WRAP plugin */
+@media only screen and (max-width: 480px) {
+    .dokuwiki .wrap_left,
+    .dokuwiki .wrap_right,
+    .dokuwiki .wrap_center,
+    .dokuwiki .wrap_column {
+        float: inherit;
+        width: 100% !important;
+        margin: 0;
+    }
+}
