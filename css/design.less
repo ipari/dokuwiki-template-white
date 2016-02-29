@@ -155,7 +155,7 @@
     li a:hover {
         background-color: @ini_background_alt;
     }
-    li i {
+    li a.action:before {
         display: inline-block;
         width: 24px;
         height: 24px;
@@ -163,69 +163,75 @@
         background: transparent url('images/ipari-silpleline.png') no-repeat;
         background-size: 120px 120px;
         vertical-align: -40%;
+        content: '';
     }
     div.user {
         padding: 6px 12px;
     }
 
-    a.action.admin i {
+    a.action.admin:before {
         background-position: -48px 0;
     }
 
-    a.action.profile i {
+    a.action.profile:before {
         background-position: 0px -24px;
     }
 
-    a.action.login i {
+    a.action.login:before {
         background-position: -48px -24px;
     }
 
-    a.action.logout i {
+    a.action.logout:before {
         background-position: -72px -24px;
     }
 
-    a.action.register i {
+    a.action.register:before {
         background-position: -24px -24px;
     }
 
-    a.action.create i {
+    a.action.create:before {
         background-position: 0 -48px;
     }
 
-    a.action.show i {
+    a.action.show:before {
         background-position: -24px -96px;
     }
 
-    a.action.source i {
+    a.action.source:before {
         background-position: 0 -96px;
     }
 
-    a.action.edit i {
+    a.action.edit:before {
         background-position: -24px 0;
     }
 
-    a.action.revs i {
+    a.action.revs:before {
         background-position: -48px -48px;
     }
 
-    a.action.backlink i {
+    a.action.backlink:before {
         background-position: -24px -48px;
     }
 
-    a.action.top i {
+    a.action.top:before {
         background-position: -72px -48px;
     }
 
-    a.action.recent i {
+    a.action.recent:before {
         background-position: 0 -72px;
     }
 
-    a.action.media i {
+    a.action.media:before {
         background-position: -24px -72px;
     }
 
-    a.action.index i {
+    a.action.index:before {
         background-position: -48px -72px;
+    }
+
+    // icons for plugins
+    a.action.plugin_export_pdf:before {
+        background-position: -72px -72px;
     }
 }
 #to_top {

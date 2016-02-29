@@ -65,7 +65,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <div id="dokuwiki__pagetools">
                     <h3><?php echo $lang['page_tools'] ?></h3>
                     <ul>
-                        <?php tpl_toolsevent('pagetools', array(
+                        <?php white_toolsevent('pagetools', array(
                             'edit'      => tpl_action('edit', 1, 'li', 1, '<i></i>'),
                             'revisions' => tpl_action('revisions', 1, 'li', 1, '<i></i>'),
                             'backlink'  => tpl_action('backlink', 1, 'li', 1, '<i></i>'),
@@ -79,7 +79,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <div id="dokuwiki__sitetools">
                     <h3><?php echo $lang['site_tools'] ?></h3>
                     <ul>
-                        <?php tpl_toolsevent('sitetools', array(
+                        <?php white_toolsevent('sitetools', array(
                             'recent'    => tpl_action('recent', 1, 'li', 1, '<i></i>'),
                             'media'     => tpl_action('media', 1, 'li', 1, '<i></i>'),
                             'index'     => tpl_action('index', 1, 'li', 1, '<i></i>'),
@@ -92,7 +92,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <div id="dokuwiki__usertools">
                     <h3><?php echo $lang['user_tools'] ?></h3>
                     <ul>
-                        <?php tpl_toolsevent('usertools', array(
+                        <?php white_toolsevent('usertools', array(
                             'admin'     => tpl_action('admin', 1, 'li', 1, '<i></i>'),
                             'profile'   => tpl_action('profile', 1, 'li', 1, '<i></i>'),
                             'register'  => tpl_action('register', 1, 'li', 1, '<i></i>'),
@@ -144,7 +144,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
             <!-- ********** FOOTER ********** -->
             <div id="dokuwiki__footer">
-                <div class="doc"><?php ipari_pageinfo() ?></div>
+                <div class="doc"><?php white_pageinfo() ?></div>
                 <?php tpl_license('badge', false, false) ?>
             </div><!-- /footer -->
 

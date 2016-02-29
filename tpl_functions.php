@@ -14,23 +14,27 @@ if (!defined('DOKU_INC')) die();
 /**
  * copied to core (available since Detritus)
  */
-if (!function_exists('tpl_toolsevent')) {
-    function tpl_toolsevent($toolsname, $items, $view='main') {
-        $data = array(
-            'view'  => $view,
-            'items' => $items
-        );
+function white_toolsevent($toolsname, $items, $view='main') {
+    $data = array(
+        'view'  => $view,
+        'items' => $items
+    );
 
-        $hook = 'TEMPLATE_'.strtoupper($toolsname).'_DISPLAY';
-        $evt = new Doku_Event($hook, $data);
-        if($evt->advise_before()){
-            foreach($evt->data['items'] as $k => $html) echo $html;
+    $hook = 'TEMPLATE_'.strtoupper($toolsname).'_DISPLAY';
+    $evt = new Doku_Event($hook, $data);
+    if($evt->advise_before()){
+        $actions = array('export_pdf');
+        foreach($evt->data['items'] as $k => $html) {
+            if (in_array($k, $actions)) {
+                $html = str_replace(' '.$k, ' plugin_'.$k, $html);
+            }
+            echo $html;
         }
-        $evt->advise_after();
     }
+    $evt->advise_after();
 }
 
-function ipari_breadcrumbs() {
+function white_breadcrumbs() {
     global $lang;
     global $conf;
 
@@ -58,7 +62,7 @@ function ipari_breadcrumbs() {
     return true;
 }
 
-function ipari_pageinfo($ret = false) {
+function white_pageinfo($ret = false) {
     global $conf;
     global $lang;
     global $INFO;
