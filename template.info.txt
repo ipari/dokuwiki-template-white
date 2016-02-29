@@ -1,7 +1,7 @@
 base     white
 author   Lee, Kwangyoung
 email    ipari@leaflette.com
-date     2016-02-15
+date     2016-02-29
 name     White Template
 desc     Simple, minimal and responsive template.
 url      https://www.dokuwiki.org/template:white
