@@ -36,12 +36,12 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <h1><?php tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"') ?></h1>
                 <div class="left">
                     <?php if ($showSidebar): ?>
-                    <button class="btn_left">Nav</button>
+                    <button class="btn_left" accesskey="s", title="[S]">Nav</button>
                     <?php endif; ?>
                 </div>
                 <div class="right">
                     <button class="btn_search">Search</button>
-                    <button class="btn_right">Edit</button>
+                    <button class="btn_right" accesskey="m", title="[M]">Edit</button>
                 </div>
             </div>
             <div class="search">
@@ -132,7 +132,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <div class="breadcrumbs"><?php tpl_youarehere() ?></div>
                 <?php } ?>
 
-                <div class="page group">
+                <div class="page group<?php if (tpl_getConf('numberedHeading')): ?> numbered_heading<?php endif ?>">
                     <!-- wikipage start -->
                     <?php tpl_content() ?>
                     <!-- wikipage stop -->
