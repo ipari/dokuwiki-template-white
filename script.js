@@ -25,6 +25,11 @@
     	}
     }
 
+    function showSearch() {
+        $('div.search').toggle();
+        $('div.search').find('input.edit').select();
+    }
+
     function bindEvents() {
         $('.sidebar').on('wheel scroll', preventParentWheel);
         $('.btn_left').click(function() {
@@ -39,8 +44,13 @@
             $('#dokuwiki__tools').hide();
         });
         $('.btn_search').click(function() {
-            $('div.search').toggle();
-            $('div.search').find('input.edit').focus();
+            showSearch();
+        });
+        $(document).keydown(function(e) {
+            if (e.which == 70 && (e.shiftKey || e.altKey)) {
+                showSearch();
+                e.preventDefault();
+            }
         });
     }
 
