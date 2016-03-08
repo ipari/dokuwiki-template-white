@@ -45,25 +45,25 @@ h1 {
 }
 h2 {
     font-size: 2em;
-    margin: 0 0 0.666em;
+    margin: 0 0 0.5em;
     border-bottom: 1px solid @ini_border;
 }
 h3 {
     font-size: 1.666em;
-    margin: 0 0 0.888em;
+    margin: 0 0 0.5em;
     border-bottom: 1px solid @ini_border;
 }
 h4 {
     font-size: 1.4em;
-    margin: 0 0 1.0em;
+    margin: 0 0 0.4em;
 }
 h5 {
     font-size: 1.2em;
-    margin: 0 0 1.1428em;
+    margin: 0 0 0.4em;
 }
 h6 {
     font-size: 1em;
-    margin: 0 0 1.333em;
+    margin: 0 0 0.4em;
 }
 
 /* basic bargins and paddings */
@@ -81,6 +81,11 @@ fieldset,
 address {
     margin: 0 0 1.4em 0; /* bottom margin = line-height */
     padding: 0;
+}
+
+blockquote blockquote {
+    margin: 0;
+    padding: 0 0.5em;
 }
 
 div,
@@ -242,7 +247,8 @@ kbd {
     font-family: Consolas, "Andale Mono WT", "Andale Mono", "Bitstream Vera Sans Mono", "Nimbus Mono L", Monaco, "Courier New", monospace;
     /* same font stack should be used for ".dokuwiki table.diff td" in _diff.css */
     font-size: 1em;
-    padding: 0.2em 0.4em;
+    padding: 0 4px;
+    border: 1px solid @ini_border;
     direction: ltr;
     text-align: left;
     background-color: @ini_background_alt;
