@@ -47,7 +47,7 @@
             showSearch();
         });
         $(document).keydown(function(e) {
-            if (e.which == 70 && (e.shiftKey || e.altKey)) {
+            if (e.which == 70 && e.altKey) {
                 showSearch();
                 e.preventDefault();
             }
