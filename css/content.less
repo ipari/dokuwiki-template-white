@@ -35,19 +35,19 @@
             counter-reset: level3;
         }
         h2:before,
-        #dw__toc li.level2 a:before {
+        #dw__toc li.level1 a:before {
             color: @ini_numbered_heading;
             content: counter(level1) ". ";
             counter-increment: level1;
         }
         h3:before,
-        #dw__toc li.level3 a:before {
+        #dw__toc li.level2 a:before {
             color: @ini_numbered_heading;
             content: counter(level1) "." counter(level2) ". ";
             counter-increment: level2;
         }
         h4:before,
-        #dw__toc li.level4 a:before {
+        #dw__toc li.level3 a:before {
             color: @ini_numbered_heading;
             content: counter(level1) "." counter(level2) "." counter(level3) ". ";
             counter-increment: level3;
