@@ -7,3 +7,4 @@
  */
 
 $conf['numberedHeading']           = 0;
+$conf['tocPosition']               = 'wikipedia';

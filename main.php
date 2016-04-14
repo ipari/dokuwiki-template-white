@@ -132,7 +132,10 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <div class="breadcrumbs"><?php tpl_youarehere() ?></div>
                 <?php } ?>
 
-                <div class="page group<?php if (tpl_getConf('numberedHeading')): ?> numbered_heading<?php endif ?>">
+                <div class="page group
+                <?php if (tpl_getConf('numberedHeading')): ?> numbered_heading<?php endif ?>
+                <?php if(tpl_getConf('tocPosition')): ?> toc_<?php echo tpl_getConf('tocPosition') ?><?php endif ?>
+                ">
                     <!-- wikipage start -->
                     <?php tpl_content() ?>
                     <!-- wikipage stop -->

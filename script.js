@@ -57,10 +57,11 @@
     function initUI() {
         // Move TOC
         if ($('.page h2').length > 0) {
-            $('#dw__toc').insertBefore($('.page h2:first'));
+            $('.toc_wikipedia').find('#dw__toc').insertBefore($('.page h2:first'));
         } else {
-            $('#dw__toc').insertAfter($('.page h1:first').next('.level1'));
+            $('.toc_wikipedia').find('#dw__toc').insertAfter($('.page h1:first').next('.level1'));
         }
+        $('.toc_dokuwiki').find('#dw__toc').insertAfter($('.page h1:first'));
         // Anchor link should be shifted by header pixel
         $(window).on("hashchange", function () {
             window.scrollTo(window.scrollX, window.scrollY - 48);

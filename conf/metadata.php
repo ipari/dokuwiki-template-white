@@ -7,3 +7,4 @@
  */
 
 $meta['numberedHeading']       = array('onoff');
+$meta['tocPosition']           = array('multichoice', '_choices' => array('dokuwiki', 'wikipedia'));
