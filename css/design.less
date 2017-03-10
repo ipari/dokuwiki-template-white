@@ -41,13 +41,13 @@
         text-decoration: none;
     }
     button {
-        width: 24px;
-        height: 24px;
-        margin: 8px 0;
+        width: 30px;
+        height: 30px;
+        margin: 5px 0;
         border: 0 none;
         outline: none;
-        background: transparent url('images/ipari-silpleline.png') no-repeat;
-        background-size: 120px 120px;
+        background: transparent url('images/ipari-simpleline.png') no-repeat;
+        background-size: 30px;
         text-indent: -9999px;
     }
     div.left {
@@ -63,7 +63,7 @@
             margin-right: 16px;
         }
         button {
-            margin-right: 8px;
+            margin-right: 4px;
         }
     }
     div.search {
@@ -81,10 +81,10 @@
         background-position: 0 0;
     }
     .btn_right {
-        background-position: -24px 0;
+        background-position: 0 -90px;
     }
     .btn_search {
-        background-position: -72px 0;
+        background-position: 0 -45px;
     }
 }
 
@@ -98,7 +98,6 @@
     display: none;
     background-color: rgba(0, 0, 0, .75);
 }
-/* just for test */
 
 #dokuwiki__aside {
     > h1,
@@ -128,7 +127,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     h3 {
-        font-size: 1.17em;
+        font-size: 16px;
         margin-bottom: 0;
         padding: 9px 12px;
         border-bottom: 1px solid @ini_border;
@@ -145,93 +144,103 @@
     }
     li a {
         display: block;
-        padding: 10px 12px;
-        vertical-align: top;
+        padding: 8px 10px;
     }
     li a.urlextern {
         padding: 10px 12px 10px 30px;
         background-position: 10px 10px;
     }
     li a:hover {
-        background-color: @ini_background_alt;
+        background-color: @ini_background_alt !important;
+    }
+    li a.action {
+        height: 30px;
+        overflow: hidden;
     }
     li a.action:before {
+        content: url('images/ipari-simpleline.png');
         display: inline-block;
-        width: 24px;
-        height: 24px;
-        margin-right: 1em;
-        background: transparent url('images/ipari-silpleline.png') no-repeat;
-        background-size: 120px 120px;
-        vertical-align: -40%;
-        content: '';
+        font-size: 0;
+        line-height: 0;
+    }
+    li a.action,
+    li a.action:hover,
+    li a.action:active,
+    li a.action:visited {
+        background-image: none !important;
+    }
+    li a.action span {
+        display: inline-block;
+        vertical-align: top;
+        padding: .2em .6em;
     }
     div.user {
         padding: 6px 12px;
     }
 
     a.action.admin:before {
-        background-position: -48px 0;
+        margin-top: -720px;
     }
 
     a.action.profile:before {
-        background-position: 0px -24px;
+        margin-top: -540px;
     }
 
     a.action.login:before {
-        background-position: -48px -24px;
+        margin-top: -630px;
     }
 
     a.action.logout:before {
-        background-position: -72px -24px;
+        margin-top: -675px;
     }
 
     a.action.register:before {
-        background-position: -24px -24px;
+        margin-top: -585px;
     }
 
     a.action.create:before {
-        background-position: 0 -48px;
+        margin-top: -135px;
     }
 
     a.action.show:before {
-        background-position: -24px -96px;
+        margin-top: -225px;
     }
 
     a.action.source:before {
-        background-position: 0 -96px;
+        margin-top: -180px;
     }
 
     a.action.edit:before {
-        background-position: -24px 0;
+        margin-top: -90px;
     }
 
     a.action.revs:before {
-        background-position: -48px -48px;
+        margin-top: -495px;
     }
 
     a.action.backlink:before {
-        background-position: -24px -48px;
+        margin-top: -450px;
     }
 
     a.action.top:before {
-        background-position: -72px -48px;
+        margin-top: -405px;
     }
 
     a.action.recent:before {
-        background-position: 0 -72px;
+        margin-top: -270px;
     }
 
     a.action.media:before {
-        background-position: -24px -72px;
+        margin-top: -315px;
     }
 
     a.action.index:before {
-        background-position: -48px -72px;
+        margin-top: -360px;
     }
 
     // icons for plugins
     a.action.plugin_export_pdf:before {
-        background-position: -72px -72px;
+        margin-top: -765px;
     }
 }
 #to_top {

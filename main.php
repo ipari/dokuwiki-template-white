@@ -66,11 +66,11 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <h3><?php echo $lang['page_tools'] ?></h3>
                     <ul>
                         <?php white_toolsevent('pagetools', array(
-                            'edit'      => tpl_action('edit', 1, 'li', 1, '<i></i>'),
-                            'revisions' => tpl_action('revisions', 1, 'li', 1, '<i></i>'),
-                            'backlink'  => tpl_action('backlink', 1, 'li', 1, '<i></i>'),
-                            'subscribe' => tpl_action('subscribe', 1, 'li', 1, '<i></i>'),
-                            'revert'    => tpl_action('revert', 1, 'li', 1, '<i></i>'),
+                            'edit'      => tpl_action('edit', 1, 'li', 1, '<span>', '</span>'),
+                            'revisions' => tpl_action('revisions', 1, 'li', 1, '<span>', '</span>'),
+                            'backlink'  => tpl_action('backlink', 1, 'li', 1, '<span>', '</span>'),
+                            'subscribe' => tpl_action('subscribe', 1, 'li', 1, '<span>', '</span>'),
+                            'revert'    => tpl_action('revert', 1, 'li', 1, '<span>', '</span>'),
                         )); ?>
                     </ul>
                 </div><!-- /dokuwiki__pagetools -->
@@ -80,9 +80,9 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <h3><?php echo $lang['site_tools'] ?></h3>
                     <ul>
                         <?php white_toolsevent('sitetools', array(
-                            'recent'    => tpl_action('recent', 1, 'li', 1, '<i></i>'),
-                            'media'     => tpl_action('media', 1, 'li', 1, '<i></i>'),
-                            'index'     => tpl_action('index', 1, 'li', 1, '<i></i>'),
+                            'recent'    => tpl_action('recent', 1, 'li', 1, '<span>', '</span>'),
+                            'media'     => tpl_action('media', 1, 'li', 1, '<span>', '</span>'),
+                            'index'     => tpl_action('index', 1, 'li', 1, '<span>', '</span>'),
                         )); ?>
                     </ul>
                 </div><!-- /dokuwiki__sitetools -->
@@ -93,10 +93,10 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <h3><?php echo $lang['user_tools'] ?></h3>
                     <ul>
                         <?php white_toolsevent('usertools', array(
-                            'admin'     => tpl_action('admin', 1, 'li', 1, '<i></i>'),
-                            'profile'   => tpl_action('profile', 1, 'li', 1, '<i></i>'),
-                            'register'  => tpl_action('register', 1, 'li', 1, '<i></i>'),
-                            'login'     => tpl_action('login', 1, 'li', 1, '<i></i>'),
+                            'admin'     => tpl_action('admin', 1, 'li', 1, '<span>', '</span>'),
+                            'profile'   => tpl_action('profile', 1, 'li', 1, '<span>', '</span>'),
+                            'register'  => tpl_action('register', 1, 'li', 1, '<span>', '</span>'),
+                            'login'     => tpl_action('login', 1, 'li', 1, '<span>', '</span>'),
                         )); ?>
                     </ul>
                     <?php
