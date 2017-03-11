@@ -182,9 +182,58 @@
 }
 
 /* admin */
-#admin__version {
-    margin-bottom: 2em;
+/* _admin.less in default template */
+
+/* main task grouped in two columns */
+.dokuwiki div.ui-admin {
+    ul.admin_tasks,
+    ul.admin_plugins {
+        float: left;
+        width: 40%;
+        list-style-type: none;
+
+        /* general menu item styling */
+        li {
+            margin: 0 0 0.5em 0;
+            white-space: nowrap;
+
+            a span {
+                display: inline-block;
+
+                &.icon {
+                    vertical-align: top;
+                    margin-right: 0.5em;
+
+                    svg {
+                        width: 1.5em;
+                        height: 1.5em;
+                    }
+                }
+
+                &.prompt {
+                    white-space: normal;
+                }
+            }
+        }
+    }
+    [dir=rtl] & ul.admin_tasks,
+    [dir=rtl] & ul.admin_plugins {
+        float: right;
+    }
 }
+
+
+/* DokuWiki version */
+#admin__version {
+    clear: left;
+    margin-bottom: 2em;
+    color: @ini_text_alt;
+}
+[dir=rtl] & #admin__version {
+    clear: right;
+    float: left;
+}
+
 
 /* config */
 #config__manager {
