@@ -133,7 +133,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <?php } ?>
 
                 <div class="page group
-                <?php if (tpl_getConf('numberedHeading')): ?> numbered_heading<?php endif ?>
+                <?php if(tpl_getConf('numberedHeading')): ?> numbered_heading<?php endif ?>
                 <?php if(tpl_getConf('tocPosition')): ?> toc_<?php echo tpl_getConf('tocPosition') ?><?php endif ?>
                 ">
                     <!-- wikipage start -->
@@ -147,8 +147,14 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
             <!-- ********** FOOTER ********** -->
             <div id="dokuwiki__footer">
+                <?php if($INFO['exists']): ?>
                 <div class="doc"><?php white_pageinfo() ?></div>
+                <?php endif ?>
+                <?php tpl_includeFile('sidebarfooter.html') ?>
                 <?php tpl_license('badge', false, false) ?>
+                <div class="footer">
+                <?php tpl_include_page(tpl_getConf('footer'), 1, 1) ?>
+                </div>
             </div><!-- /footer -->
 
             <?php tpl_includeFile('footer.html') ?>

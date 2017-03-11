@@ -277,20 +277,32 @@
     padding: 0.5em 1em;
 
     div.doc {
-        margin-bottom: .6em;
+        margin-bottom: 1em;
     }
-    .license {
+    div.license {
+        margin-bottom: 1em;
+        font-size: 85%;
+
         > a {
-            display: block;
             float: left;
             margin-right: .5em;
-            height: 2em;
+            padding-top: .3em;
         }
+        a.urlextern {
+            float: left;
+            display: block;
+            background-position: 0 0.2em;
+        }
+        :after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+    div.footer {
+        margin: 0 -1em;
+        padding: 0.5em 1em;
     }
 }
 
-.license a.urlextern {
-    display: block;
-    background-position: top left;
-}
 /* icons */
