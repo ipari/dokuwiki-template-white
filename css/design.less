@@ -123,6 +123,7 @@
         margin-top: 1em;
     }
 }
+
 .sidebar {
     overflow-x: hidden;
     overflow-y: auto;
@@ -153,96 +154,86 @@
     li a:hover {
         background-color: @ini_background_alt !important;
     }
-    li a.action {
+    
+    div.user {
+        padding: 6px 12px;
+    }
+}
+
+#dokuwiki__tools {
+    li a {
         height: 30px;
         overflow: hidden;
     }
-    li a.action:before {
+    li a:before {
         content: url('images/ipari-simpleline.png');
         display: inline-block;
         font-size: 0;
         line-height: 0;
     }
-    li a.action,
-    li a.action:hover,
-    li a.action:active,
-    li a.action:visited {
-        background-image: none !important;
-    }
-    li a.action span {
+    li a span {
         display: inline-block;
         vertical-align: top;
         padding: .2em .6em;
     }
-    div.user {
-        padding: 6px 12px;
+    li a,
+    li a:hover,
+    li a:active,
+    li a:visited {
+        background-image: none !important;
     }
-
     a.action.admin:before {
         margin-top: -720px;
     }
-
     a.action.profile:before {
         margin-top: -540px;
     }
-
     a.action.login:before {
         margin-top: -630px;
     }
-
     a.action.logout:before {
         margin-top: -675px;
     }
-
     a.action.register:before {
         margin-top: -585px;
     }
-
     a.action.create:before {
         margin-top: -135px;
     }
-
     a.action.show:before {
         margin-top: -225px;
     }
-
     a.action.source:before {
         margin-top: -180px;
     }
-
     a.action.edit:before {
         margin-top: -90px;
     }
-
     a.action.revs:before {
         margin-top: -495px;
     }
-
     a.action.backlink:before {
         margin-top: -450px;
     }
-
     a.action.top:before {
         margin-top: -405px;
     }
-
     a.action.recent:before {
         margin-top: -270px;
     }
-
     a.action.media:before {
         margin-top: -315px;
     }
-
     a.action.index:before {
         margin-top: -360px;
     }
-
     // icons for plugins
     a.action.plugin_export_pdf:before {
         margin-top: -765px;
     }
 }
+
+
 #to_top {
     input.button {
         width: 48px;
