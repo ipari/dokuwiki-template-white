@@ -27,7 +27,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
 <body id="dokuwiki__top">
     <div id="dokuwiki__site" class="<?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?>">
-        <?php html_msgarea() ?>
         <?php tpl_includeFile('header.html') ?>
 
         <!-- ********** HEADER ********** -->
@@ -121,6 +120,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
         <div class="wrapper group">
             <!-- ********** CONTENT ********** -->
             <div id="dokuwiki__content"><div class="group">
+                <?php html_msgarea() ?>
                 <?php tpl_flush() ?>
                 <?php tpl_includeFile('pageheader.html') ?>
 
