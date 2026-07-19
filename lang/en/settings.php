@@ -1,7 +1,7 @@
 <?php
 
-$lang['numberedHeading']         = 'Numbering headings';
-$lang['tocPosition']             = 'Position of TOC';
-$lang['tocPosition_o_dokuwiki']  = 'DokuWiki';
-$lang['tocPosition_o_wikipedia'] = 'Wikipedia';
-$lang['footer']                  = 'Footer page name, empty field disables the footer';
+$lang['numberedHeading'] = 'Number headings by level.';
+$lang['tocPosition'] = 'Table of contents position';
+$lang['tocPosition_o_dokuwiki'] = 'DokuWiki default';
+$lang['tocPosition_o_wikipedia'] = 'Wikipedia style';
+$lang['footer'] = 'Footer page name; leave blank to disable the footer';

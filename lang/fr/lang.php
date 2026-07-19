@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ * @license GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
  * @author 7163D from GitHub
  */
-$lang['__link__']             = 'La couleur générale des liens';
-$lang['__existing__']         = 'La couleur des liens vers une page existante';
-$lang['__missing__']          = 'La couleur des liens vers une page qui n\'existe pas';
-$lang['__numbered_heading__'] = 'La couleur pour les numéros d\'en-tête';
-$lang['__font_size__']        = 'La taille globale de police (%, px, pt)';
-$lang['__line_height__']      = 'L\'épaisseur globale des lines (x.x, %)';
-$lang['__body_width__']       = 'La largeur du corps(%, px, em, ...)';
-$lang['__sidebar_width__']    = 'La taille de la barre latérale, si elle existe(%, px, em, ...)';
+$lang['__link__'] = 'Couleur générale des liens';
+$lang['__existing__'] = 'Couleur des liens vers les pages existantes';
+$lang['__missing__'] = 'Couleur des liens vers les pages inexistantes';
+$lang['__numbered_heading__'] = 'Couleur des numéros de titre';
+$lang['__font_size__'] = 'Taille de police de l\'ensemble du site (%, px, pt)';
+$lang['__line_height__'] = 'Hauteur de ligne de l\'ensemble du site (x.x, %)';
+$lang['__body_width__'] = 'Largeur du contenu (%, px, em, ...)';
+$lang['__sidebar_width__'] = 'Largeur du panneau latéral, s\'il est présent (%, px, em, ...)';
